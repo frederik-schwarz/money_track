@@ -1,19 +1,20 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
-//import {addNewPurchase} from '../actions'
+import { deletePurchased } from '../actions'
 
 
 
-function deletePurchase(props) {
+function DeletePurchase(props) {
+    console.log(props, 'this is the console of Del jsx')
     function handleDeleteClick(id) {
         props.dispatch(deletePurchased(id))
     }
-
+    
     return (
         <>
-        <button onCLick={() => handleDeleteClick(props.purchased.id)}>Delete</button>
+        <button onClick={() => handleDeleteClick(props.purchased.id)}>Delete</button>
         </>
     )
 }
 
-export default connect()(deletePurchase)
+export default connect()(DeletePurchase)

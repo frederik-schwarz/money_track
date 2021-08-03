@@ -20,3 +20,9 @@ export function addPurchase(item) {
         console.log(err.message)
     })
 }
+
+export function deletePurchase(id) {
+    return request
+    .delete('/api/v1/purchases/' + id)
+    .then(res => res.body)
+}
