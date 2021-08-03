@@ -7,7 +7,7 @@ import { setAllPurchases } from '../actions/index.js'
 
 function AllPurchases (props) {
     useEffect(() => {
-        props.dispatch(setAllPurchases()) //imported from actions
+        props.dispatch(setAllPurchases()) 
     }, [])
 
     return (

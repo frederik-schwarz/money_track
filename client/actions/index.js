@@ -29,23 +29,24 @@ const removePurchase = (purchaseDel) => {
 
 //setAllPurchases will need to be used in use effect in componets
 export const setAllPurchases = () => {
-    return (dispatch) => {
+    return dispatch => {
         return getAllPurchases()
         .then(purchases => {
-            console.log(purchases, 'this is in actions index')
             return dispatch(setPurchases(purchases))
         })
     }
 }
 
 export const addNewPurchase = (purchase) => {
-    console.log(purchase, 'this is in the actions number 1')
     return dispatch => {
-        return addPurchase(purchase)
+         addPurchase(purchase)
         .then(item => {
-            console.log(item, 'this is the actios number 2')
             return dispatch(addNewPurchaseToStore(item))
         }) 
+        return getAllPurchases()
+        .then(purchases => {
+            return dispatch(setPurchases(purchases))
+        })
     }
 }
 
@@ -54,6 +55,10 @@ export const deletePurchased = (deleteId) => {
         deletePurchase(deleteId)
         .then((item) => {
             dispatch(removePurchase(deleteId))
+        })
+        return getAllPurchases()
+        .then(purchases => {
+            return dispatch(setPurchases(purchases))
         })
     }
 }
