@@ -4,7 +4,7 @@ exports.up = function(knex) {
       table.increments('id').primary()
       table.string('purchased')
       table.integer('price')
-      table.integer('importants')
+      table.integer('importance')
   })
 };
 
