@@ -8,7 +8,7 @@ import TotalSpentDay from './TotalSpentDay'
 
 
 //the todo and Thomes has good examples of components on github
-
+//this is a test
 
 function App (props) {
 
