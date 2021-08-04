@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import AllPurchases from './AllPurchases'
 import AddPurchase from './AddPurchase'
+import TotalSpentDay from './TotalSpentDay'
 
 
 
@@ -16,6 +17,7 @@ function App (props) {
     <h1>hello wrold</h1>
     <AllPurchases />
     <AddPurchase />
+    <TotalSpentDay />
     </>
   )
 }
