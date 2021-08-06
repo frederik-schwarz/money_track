@@ -12,12 +12,12 @@ function TotalSpentDay (props) {
         props.dispatch(setAllPurchases()) 
     }, [])
     return (
-        <div className="totalSpentContainer">
+        <div className="averageContainer">
              {props.purchase.map(purchase => {
                  average = (average + purchase.importance) / length
                  decimalLimit = parseFloat(average).toFixed(1)
                 })}
-            <p className="totalSpent">Average importance: {decimalLimit}/10</p>
+            <p className="average">Average importance: {decimalLimit}/10</p>
             
         </div>
     )

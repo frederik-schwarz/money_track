@@ -4,9 +4,17 @@
     height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
 }
 .totalSpent {
     font-size: 3rem;
     font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.average {
+    font-size: 3rem;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+
 }

@@ -20,6 +20,9 @@ function AllPurchases (props) {
                     return(
                         <li className="allPurchasesLi" key={purchase.id}>
                             {purchase.purchased}
+                            <span className="placeHolderInvisible">P</span>
+                            <span className="symbols"> :$</span> 
+                           <span className="purchasePriceSingle">{purchase.price}</span> 
                             <DeletePurchase purchased={purchase}/>
                         </li>
                         

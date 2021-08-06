@@ -1,10 +1,14 @@
+
+
 .allPurchasesContainer {
     padding: 10px;
-
+    display: flex;
+    justify-content: center;
 }
 .allPurchasesUl {
     list-style-type: none;
     margin-left: 5rem;
+    width: 70%;
 }
 .allPurchasesLi {
     font-size: 4rem;
@@ -16,6 +20,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+}
+.placeHolderInvisible {
+    color: transparent;
 }
 .deleteButtonContainer {
     width: 10rem;
