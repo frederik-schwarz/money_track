@@ -9,7 +9,6 @@ export function getAllPurchases() {
 }
 
 export function addPurchase(item) {
-    console.log(item, 'this is the api speaking')
     return request
     .post(rootUrl)
     .send(item)

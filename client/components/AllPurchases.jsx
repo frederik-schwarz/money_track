@@ -11,14 +11,14 @@ function AllPurchases (props) {
     }, [])
 
     return (
-        <>
+        <div className="allPurchasesContainer">
         
         
-             <ul>
+             <ul className="allPurchasesUl">
                 {props.purchase.map(purchase => {
                     
                     return(
-                        <li>
+                        <li className="allPurchasesLi" key={purchase.id}>
                             {purchase.purchased}
                             <DeletePurchase purchased={purchase}/>
                         </li>
@@ -28,12 +28,11 @@ function AllPurchases (props) {
             </ul> 
             
             
-        </>
+        </div>
     )
 }
 
 const mapStateToProps = (globalState) => {
-    console.log(globalState)
     return {
         purchase: globalState.purchasesReducer
     }

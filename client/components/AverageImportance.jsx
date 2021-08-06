@@ -1,22 +1,23 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import { setAllPurchases } from '../actions/index.js'
-import AverageImportance from './AverageImportance.jsx'
 
 
 
 function TotalSpentDay (props) {
-    let totalDaySpend = 0
+    let average = 0
+    let length = props.purchase.length
+    let decimalLimit = 0
     useEffect(() => {
         props.dispatch(setAllPurchases()) 
     }, [])
     return (
         <div className="totalSpentContainer">
              {props.purchase.map(purchase => {
-                 totalDaySpend = totalDaySpend + purchase.price
+                 average = (average + purchase.importance) / length
+                 decimalLimit = parseFloat(average).toFixed(1)
                 })}
-            <p className="totalSpent">Total spent: ${totalDaySpend}</p>
-            <AverageImportance />
+            <p className="totalSpent">Average importance: {decimalLimit}/10</p>
             
         </div>
     )

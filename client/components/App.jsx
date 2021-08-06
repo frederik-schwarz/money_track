@@ -7,6 +7,7 @@ import TotalSpentDay from './TotalSpentDay'
 
 
 
+
 //the todo and Thomes has good examples of components on github
 //this is a test
 
@@ -14,10 +15,12 @@ function App (props) {
 
   return (
     <>
-    <h1>hello wrold</h1>
+    <div className='titleContainer'>
+    <h1 className="title">Money Tracker</h1>
+    </div>
+    <TotalSpentDay />
     <AllPurchases />
     <AddPurchase />
-    <TotalSpentDay />
     </>
   )
 }

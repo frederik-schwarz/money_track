@@ -7,7 +7,6 @@ export const SET_PURCHASES = 'SET_PURCHASES'
 export const ADD_PURCHASE = 'ADD_PURCHASE'
 
 const setPurchases = (purchases) => {
-    console.log('this is the actions file')
     return {
         type: SET_PURCHASES,
         purchases

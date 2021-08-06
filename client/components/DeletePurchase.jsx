@@ -5,15 +5,16 @@ import { deletePurchased } from '../actions'
 
 
 function DeletePurchase(props) {
-    console.log(props, 'this is the console of Del jsx')
     function handleDeleteClick(id) {
         props.dispatch(deletePurchased(id))
     }
     
     return (
-        <>
-        <button onClick={() => handleDeleteClick(props.purchased.id)}>Delete</button>
-        </>
+        <div className="deleteButtonContainer">
+        <div className="deleteButtonContainerChild">
+        <button className="deleteButton" onClick={() => handleDeleteClick(props.purchased.id)}>Delete</button>
+        </div>
+        </div>
     )
 }
 
