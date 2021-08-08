@@ -19,14 +19,28 @@ function AddPurchase(props) {
     }
     return (
         <>
-            <form onSubmit={(event) => submitHandle(event)}>
-                <label htmlFor='purchased'>Good purchased: </label>
-                <input onChange={(event) => changeHandler(event)} name='purchased' htmlFor='purchased' type='text' id='puchased' value={formData.purchased}></input>
-                <label htmlFor='price'>Price: </label>
-                <input onChange={(event) => changeHandler(event)} name='price' htmlFor='price' id='price' type='number' value={formData.price}></input>
-                <label htmlFor='importance'>Importance of purchase out of 10: </label>
-                <input onChange={(event) => changeHandler(event)} name='importance' htmlFor='importance' id='importance' type='number' value={formData.importance}></input>
-                <input type="submit" value="Submit"/>
+            <form className='formContainer' onSubmit={(event) => submitHandle(event)}>
+                
+                <div className='formDivs'>
+                <div className='formDivsChild'>
+                <label className='labelForAdd' htmlFor='purchased'>Good purchased: </label>
+                <input className='inputForAdd' onChange={(event) => changeHandler(event)} name='purchased' htmlFor='purchased' type='text' id='puchased' value={formData.purchased}></input>
+                </div>
+                </div>
+                <div className='formDivs'>
+                <div className='formDivsChild'>
+                <label className='labelForAdd' htmlFor='price'>Price: </label>
+                <input className='inputForAdd' onChange={(event) => changeHandler(event)} name='price' htmlFor='price' id='price' type='number' value={formData.price}></input>
+                </div>
+                </div>
+                <div className='formDivs'>
+                <div className='formDivsChild'>
+                <label className='inputForAdd' className='labelForAdd' htmlFor='importance'>Importance of purchase out of 10: </label>
+                <input className='inputForAdd' onChange={(event) => changeHandler(event)} name='importance' htmlFor='importance' id='importance' type='number' value={formData.importance}></input>
+                </div>
+                </div>
+                
+                <input className='submitForAdd' type="submit" value="Submit"/>
             </form>
         </>
     )

@@ -1,0 +1,49 @@
+.inputForAdd {
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    font-size: 2rem;
+   
+}
+.labelForAdd {
+    font-size: 2rem;
+}
+.inputForAdd:focus, textarea:focus, select:focus{
+    outline: none;
+    animation-name: lineChange;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+.formContainer {
+    background-color: red;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.formDivsChild {
+    background-color: violet;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5rem;
+}
+.formDivs {
+    background-color: yellow;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+@keyframes lineChange {
+    0% {border-bottom: 2px solid black;}
+    100% {border-bottom: 2px solid white;}
+}
