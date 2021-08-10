@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import changeName from './changeName'
-
+import purchasesReducer from './purchasesReducer'
 export default combineReducers({
-  changeName
+  purchasesReducer
 })
+
 
 //exports all the reducers from this file

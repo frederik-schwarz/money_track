@@ -1,43 +1,44 @@
 {
-    "name": "fullstack-template",
-    "version": "2.0.0",
-    "main": "server/index.js",
-    "license": "MIT",
-    "keywords": [
-      "fullstack"
+  "name": "fullstack-template",
+  "version": "2.0.0",
+  "main": "server/index.js",
+  "license": "MIT",
+  "keywords": [
+    "fullstack"
+  ],
+  "scripts": {
+    "start": "node server",
+    "test": "jest",
+    "test:watch": "jest --noStackTrace --watchAll",
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "npm run webpack -- --watch",
+    "dev:server": "nodemon --watch server server/index.js",
+    "build": "run-p build:client build:server",
+    "build:client": "npm run webpack -- --mode production",
+    "build:server": "npm run knex -- migrate:latest",
+    "lint": "eslint --ext .js,.jsx .",
+    "webpack": "webpack --config ./client/webpack.config.js",
+    "knex": "knex --knexfile ./server/db/knexfile.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
     ],
-    "scripts": {
-      "start": "node server",
-      "test": "jest",
-      "test:watch": "jest --noStackTrace --watchAll",
-      "dev": "run-p dev:client dev:server",
-      "dev:client": "npm run webpack -- --watch",
-      "dev:server": "nodemon --watch server server/index.js",
-      "build": "run-p build:client build:server",
-      "build:client": "npm run webpack -- --mode production",
-      "build:server": "npm run knex -- migrate:latest",
-      "lint": "eslint --ext .js,.jsx .",
-      "webpack": "webpack --config ./client/webpack.config.js",
-      "knex": "knex --knexfile ./server/db/knexfile.js"
-    },
-    "babel": {
-      "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-      ],
-      "plugins": [
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-transform-runtime"
-      ]
-    },
-    "eslintConfig": {
-      "extends": "eda",
-      "ignorePatterns": [
-        "bundle.js"
-      ]
-    },
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "eda",
+    "ignorePatterns": [
+      "bundle.js"
+    ]
+  },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
     "@babel/plugin-transform-runtime": "^7.14.5",
@@ -65,5 +66,11 @@
     "supertest": "^6.1.4",
     "webpack": "^5.46.0",
     "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.95.8",
+    "pg": "^8.6.0",
+    "superagent": "^6.1.0"
   }
 }

@@ -1,33 +1,28 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import AllPurchases from './AllPurchases'
+import AddPurchase from './AddPurchase'
+import TotalSpentDay from './TotalSpentDay'
 
-import { fetchFruits } from '../actions'
+
+
+
 
 //the todo and Thomes has good examples of components on github
-
+//this is a test
 
 function App (props) {
-//   useEffect(() => {
-//     props.dispatch(fetchFruits())
-//   }, [])
 
-//   return (
-//     <>
-//       <div className='app'>
-//         <h1>Fullstack Boilerplate - with Fruits!</h1>
-//         <ul>
-//           {props.fruits.map(fruit => (
-//             <li key={fruit}>{fruit}</li>
-//           ))}
-//         </ul>
-//       </div>
-//     </>
-//   )
-}
-const mapStateToProps = (globalState) => {
-  return {
-    fruits: globalState.fruits
-  }
+  return (
+    <>
+    <div className='titleContainer'>
+    <h1 className="title">Money Tracker</h1>
+    </div>
+    <TotalSpentDay />
+    <AllPurchases />
+    <AddPurchase />
+    </>
+  )
 }
 
-export default connect(mapStateToProps)(App)
+export default connect()(App)
